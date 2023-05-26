@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>eval을 이용하여 버튼에따라 입력된 연산식의 답을 출력하시오</title>
+</head>
+<body>
+   <h4>20190629 김기석<br>@@eval을 이용하여 버튼에따라 입력된 연산식의 답을 출력하시오@@</h4>
+ <section class="calculator">
+  <form>
+   <input type="text" name="" id="" class="screen">
+  </form>
+  <div class="buttons">
+   <button type="button" class="btn btn-grey" data-num="1">1</button>
+   <button type="button" class="btn btn-grey" data-num="2">2</button>
+   <button type="button" class="btn btn-grey" data-num="3">3</button>
+   <button type="button" class="btn btn-grey" data-num="4">4</button>
+   <button type="button" class="btn btn-grey" data-num="5">5</button>
+   <button type="button" class="btn btn-grey" data-num="6">6</button>
+   <button type="button" class="btn btn-grey" data-num="7">7</button>
+   <button type="button" class="btn btn-grey" data-num="8">8</button>
+   <button type="button" class="btn btn-grey" data-num="9">9</button>
+   <button type="button" class="btn btn-grey" data-num="0">0</button>
+   <button type="button" class="btn btn-yellow" data-num="*">*</button>
+   <button type="button" class="btn btn-yellow" data-num="/">/</button>
+   <button type="button" class="btn btn-yellow" data-num="-">-</button>
+   <button type="button" class="btn btn-yellow" data-num="+">+</button>
+   <button type="button" class="btn-equal btn-grey">=</button>
+   <button type="button" class="btn-clear btn-grey">Clear</button>
+  </div>
+ </section>
+ <script>
+    (function(){
+  let screen = document.querySelector('.screen');
+  let buttons = document.querySelectorAll('.btn');
+  let clear = document.querySelector('.btn-clear');
+  let equal = document.querySelector('.btn-equal');
+  
+  buttons.forEach(function(button){
+    button.addEventListener('click', function(e){
+      let value = e.target.dataset.num;
+      screen.value += value;
+    })
+  });
+  equal.addEventListener('click', function(e){
+    if(screen.value === ''){
+      screen.value = '값을 입력해 주세요.';
+    } else {
+      let answer = eval(screen.value);
+      screen.value = answer;
+    }
+  })
+
+  clear.addEventListener('click', function(e){
+    screen.value = '';
+  })
+ 
+})();
+ </script>
+</body>
+</html>
