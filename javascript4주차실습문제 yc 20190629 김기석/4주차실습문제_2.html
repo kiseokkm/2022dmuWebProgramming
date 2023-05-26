@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title></head>
+<body>
+<script>
+document.write("<h3> prompt 함수를 반복 호출하여 5개의 정수를 입력 받아 배열에 저장하고 입력된 반대의 수서로 출력하는 웹페이지를 작성하시오</h3>");
+document.write("<hr>");
+var k=[]; 
+for(var i=0; i<5; i++) 
+{
+    k[i]=prompt("정수 입력 하세요");
+}
+document.write("입력된 수의 배열:<br>");
+for(var i=0; i<5; i++) 
+{
+    document.write(k[i]+" ");
+}
+document.write("<hr>");
+document.write("역순으로 재정렬된 배열:<br>");
+for(var i=4; i>=0; i--) 
+{
+    document.write(k[i]+" ");
+}
+document.write("<br>");
+k.reverse() 
+
+</script>
+</body>
+</html>
