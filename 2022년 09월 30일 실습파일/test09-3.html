@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입 book 객체 작성</title>
+</head>
+<body>
+<h3>book 객체 만들기(프로토타입 book 객체 작성)</h3>
+<hr>
+<script>
+    function book(){ //프로토타입 book 객체 작성
+        this.title="html5";
+        this.author="황기태";
+        this.price=20000;
+    }
+    var book = new book();
+
+    document.write("book : ");
+    document.write(book.title + ", ");
+    document.write(book.author + ", ");
+    document.write(book.price + "<br>");
+</script>
+</body>
+</html>
