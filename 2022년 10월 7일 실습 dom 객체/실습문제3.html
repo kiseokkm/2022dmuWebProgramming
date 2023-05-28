@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>다음 빈 곳에 숨은 단어?</title>
+
+        <script>
+            let clickc = "hidden"; 
+            function change(){
+                if(clickc  == "hidden"){ 
+                    clickc  = "visible";
+                }
+                else {
+                    clickc  = "hidden";
+                }
+                let span1 = document.querySelectorAll("span")
+                for(let span of span1){
+                    span.style.visibility = clickc ;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h3>다음 빈 곳에 숨은 단어?</h3>
+        <button type="button" onclick="change();">showhide</button>
+        <hr>
+        <ul>
+            <li> 1 (<span>love</span>) you </li>
+            <li> CSS is casacading (<span>style</span>)sheet</li>
+            <li> 응답하라 (<span>1988</span>)</li>
+        </ul>
+        <style>
+            
+            span{ /*페이지켰을떄 hidden상태로 키는거*/
+                visibility: hidden;
+            } 
+            h3{
+            display: inline;
+        }
+            </style>
+    </body>
+</html>
