@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div clock</title>
+</head>
+<body onload="div.onclick">
+    <h3>div 태그에 시계 만들기</h3>
+    시계를 클릭하면 시계가 멈추고 다시 클릭하면 가기 시작한다. <hr>
+    <div id="div"></div>
+    <script>
+        var divid = null;
+        var tog = 0 ;
+        divid = document.getElementById("div");
+        var timerID = setInterval("starttimer()",200);
+    
+        div.onclick = function(){
+            if(tog==1){
+                divid.style.clock="black";
+                timerID = setInterval("starttimer()",200);
+                tog = 0;
+            }else{
+                divid.style.clock="gray";
+                clearInterval(timerID);
+                tog =1;
+            }
+            }
+            function starttimer(){
+                var nowDate = new Date();
+                divid.innerHTML = nowDate.toLocaleTimeString();
+            }
+    </script>
+
+<style>
+    div {
+        display : inline-block;
+        width : 7em;
+        border : 1px solid gray;
+        background-color : aliceblue;
+        
+    }
+    </style>
+    
+</body>
+</html>
